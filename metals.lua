@@ -111,7 +111,7 @@ minetest.register_node("basic_materials:brass_block", {
 	tiles = { "basic_materials_brass_block.png" },
 	is_ground_content = false,
 	groups = {cracky=1, level=2},
-	sounds = default.node_sound_metal_defaults()
+	sounds = metal.sounds
 })
 
 -- crafts
@@ -120,7 +120,7 @@ minetest.register_craft( {
 	output = "basic_materials:copper_wire 2",
 	type = "shapeless",
 	recipe = {
-		"default:copper_ingot",
+		"copper:ingot",
 		"basic_materials:empty_spool",
 		"basic_materials:empty_spool",
 	},
@@ -140,7 +140,7 @@ minetest.register_craft( {
 	output = "basic_materials:gold_wire 2",
 	type = "shapeless",
 	recipe = {
-		"default:gold_ingot",
+		"gold:ingot",
 		"basic_materials:empty_spool",
 		"basic_materials:empty_spool",
 	},
@@ -150,7 +150,7 @@ minetest.register_craft( {
 	output = "basic_materials:steel_wire 2",
 	type = "shapeless",
 	recipe = {
-		"default:steel_ingot",
+		"iron:ingot",
 		"basic_materials:empty_spool",
 		"basic_materials:empty_spool",
 	},
@@ -159,25 +159,25 @@ minetest.register_craft( {
 minetest.register_craft( {
 	output = "basic_materials:steel_strip 12",
 	recipe = {
-		{ "", "default:steel_ingot", "" },
-		{ "default:steel_ingot", "", "" },
+		{ "", "iron:ingot", "" },
+		{ "iron:ingot", "", "" },
 	},
 })
 
 minetest.register_craft( {
 	output = "basic_materials:copper_strip 12",
 	recipe = {
-		{ "", "default:copper_ingot", "" },
-		{ "default:copper_ingot", "", "" },
+		{ "", "copper:ingot", "" },
+		{ "copper:ingot", "", "" },
 	},
 })
 
 minetest.register_craft( {
 	output = "basic_materials:steel_bar 6",
 	recipe = {
-		{ "", "", "default:steel_ingot" },
-		{ "", "default:steel_ingot", "" },
-		{ "default:steel_ingot", "", "" },
+		{ "", "", "iron:ingot" },
+		{ "", "iron:ingot", "" },
+		{ "iron:ingot", "", "" },
 	},
 })
 
@@ -185,17 +185,17 @@ minetest.register_craft( {
 	output = "basic_materials:padlock 2",
 	recipe = {
 		{ "basic_materials:steel_bar" },
-		{ "default:steel_ingot" },
-		{ "default:steel_ingot" },
+		{ "iron:ingot" },
+		{ "iron:ingot" },
 	},
 })
 
 minetest.register_craft({
 	output = "basic_materials:chainlink_steel 12",
 	recipe = {
-		{"", "default:steel_ingot", "default:steel_ingot"},
-		{ "default:steel_ingot", "", "default:steel_ingot" },
-		{ "default:steel_ingot", "default:steel_ingot", "" },
+		{"", "iron:ingot", "iron:ingot"},
+		{ "iron:ingot", "", "iron:ingot" },
+		{ "iron:ingot", "iron:ingot", "" },
 	},
 })
 
@@ -229,9 +229,9 @@ minetest.register_craft({
 minetest.register_craft( {
 	output = "basic_materials:gear_steel 6",
 	recipe = {
-		{ "", "default:steel_ingot", "" },
-		{ "default:steel_ingot","basic_materials:chainlink_steel", "default:steel_ingot" },
-		{ "", "default:steel_ingot", "" }
+		{ "", "iron:ingot", "" },
+		{ "iron:ingot","basic_materials:chainlink_steel", "iron:ingot" },
+		{ "", "iron:ingot", "" }
 	},
 })
 
@@ -239,8 +239,8 @@ minetest.register_craft( {
 	type = "shapeless",
 	output = "basic_materials:brass_ingot 3",
 	recipe = {
-		"default:copper_ingot",
-		"default:copper_ingot",
+		"copper:ingot",
+		"copper:ingot",
 		"moreores:silver_ingot",
 	},
 })
@@ -250,9 +250,9 @@ if not minetest.get_modpath("moreores") then
     minetest.register_craft( {
         output = "basic_materials:brass_ingot 9",
         recipe = {
-	    {"default:copper_ingot", "default:tin_ingot", "default:copper_ingot"},
-	    {"default:gold_ingot", "default:copper_ingot", "default:gold_ingot"},
-	    {"default:copper_ingot", "default:tin_ingot", "default:copper_ingot"},
+	    {"copper:ingot", "tin:ingot", "copper:ingot"},
+	    {"gold:ingot", "copper:ingot", "gold:ingot"},
+	    {"copper:ingot", "tin:ingot", "copper:ingot"},
         },
     })
 end

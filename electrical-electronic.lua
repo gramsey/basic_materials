@@ -33,8 +33,8 @@ minetest.register_craftitem("basic_materials:energy_crystal_simple", {
 minetest.register_craft( {
 	output = "mesecons_materials:silicon 4",
 	recipe = {
-		{ "default:sand", "default:sand" },
-		{ "default:sand", "default:steel_ingot" },
+		{ "sand:sand", "sand:sand" },
+		{ "sand:sand", "iron:ingot" },
 	},
 })
 
@@ -42,16 +42,16 @@ minetest.register_craft( {
 	output = "basic_materials:ic 4",
 	recipe = {
 		{ "mesecons_materials:silicon", "mesecons_materials:silicon" },
-		{ "mesecons_materials:silicon", "default:copper_ingot" },
+		{ "mesecons_materials:silicon", "copper:ingot" },
 	},
 })
 
 minetest.register_craft( {
     output = "basic_materials:motor 2",
     recipe = {
-		{ "default:mese_crystal_fragment", "basic_materials:copper_wire", "basic_materials:plastic_sheet" },
-		{ "default:copper_ingot",          "default:steel_ingot",         "default:steel_ingot" },
-		{ "default:mese_crystal_fragment", "basic_materials:copper_wire", "basic_materials:plastic_sheet" }
+		{ "mese:crystal_fragment", "basic_materials:copper_wire", "basic_materials:plastic_sheet" },
+		{ "copper:ingot",          "iron:ingot",         "iron:ingot" },
+		{ "mese:crystal_fragment", "basic_materials:copper_wire", "basic_materials:plastic_sheet" }
     },
 	replacements = {
 		{ "basic_materials:copper_wire", "basic_materials:empty_spool" },
@@ -62,7 +62,7 @@ minetest.register_craft( {
 minetest.register_craft( {
     output = "basic_materials:heating_element 2",
     recipe = {
-		{ "default:copper_ingot", "default:mese_crystal_fragment", "default:copper_ingot" }
+		{ "copper:ingot", "mese:crystal_fragment", "copper:ingot" }
     },
 })
 
@@ -70,8 +70,8 @@ minetest.register_craft({
 	--type = "shapeless",
 	output = "basic_materials:energy_crystal_simple 2",
 	recipe = {
-		{ "default:mese_crystal_fragment", "default:torch", "default:mese_crystal_fragment" },
-		{ "default:diamond", "default:gold_ingot", "default:diamond" }
+		{ "mese:crystal_fragment", "torch:torch", "mese:crystal_fragment" },
+		{ "diamond:diamond", "gold:ingot", "diamond:diamond" }
 	},
 })
 

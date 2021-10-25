@@ -30,14 +30,14 @@ minetest.register_node("basic_materials:cement_block", {
 	tiles = {"basic_materials_cement_block.png"},
 	is_ground_content = true,
 	groups = {cracky=2},
-	sounds = default.node_sound_stone_defaults(),
+	sounds = stone.sounds,
 })
 
 minetest.register_node("basic_materials:concrete_block", {
 	description = S("Concrete Block"),
 	tiles = {"basic_materials_concrete_block.png",},
 	groups = {cracky=1, level=2, concrete=1},
-	sounds = default.node_sound_stone_defaults(),
+	sounds = stone.sounds,
 })
 
 -- crafts
@@ -77,24 +77,24 @@ minetest.register_craft( {
 	type = "shapeless",
 	output = "basic_materials:terracotta_base 8",
 	recipe = {
-		"bucket:bucket_water",
-		"default:clay_lump",
-		"default:gravel",
+		"water:bucket",
+		"clay:lump",
+		"gravel:gravel",
 	},
-	replacements = { {"bucket:bucket_water", "bucket:bucket_empty"}, },
+	replacements = { {"water:bucket", "bucket:empty"}, },
 })
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "basic_materials:wet_cement 3",
 	recipe = {
-		"default:dirt",
+		"dirt:dirt",
 		"dye:dark_grey",
 		"dye:dark_grey",
 		"dye:dark_grey",
-		"bucket:bucket_water"
+		"water:bucket"
 	},
-	replacements = {{'bucket:bucket_water', 'bucket:bucket_empty'},},
+	replacements = {{'water:bucket', 'bucket:empty'},},
 })
 
 minetest.register_craft({
@@ -107,9 +107,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'basic_materials:concrete_block 6',
 	recipe = {
-		{'group:sand',                'basic_materials:wet_cement', 'default:gravel'},
+		{'group:sand',                'basic_materials:wet_cement', 'gravel:gravel'},
 		{'basic_materials:steel_bar', 'basic_materials:wet_cement', 'basic_materials:steel_bar'},
-		{'default:gravel',            'basic_materials:wet_cement', 'group:sand'},
+		{'gravel:gravel',            'basic_materials:wet_cement', 'group:sand'},
 	}
 })
 
